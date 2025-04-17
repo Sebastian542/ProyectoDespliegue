@@ -1,0 +1,36 @@
+/* styles.css */
+
+/* Estilo global para el cuerpo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo para el título */
+h1 {
+    color: #3498db;
+    text-align: center;
+    margin-top: 50px;
+    font-size: 3em;
+}
+
+/* Estilo para el párrafo */
+p {
+    color: #555;
+    font-size: 1.2em;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Estilo para mejorar la visualización en dispositivos pequeños */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2em;
+    }
+    p {
+        font-size: 1em;
+    }
+}
