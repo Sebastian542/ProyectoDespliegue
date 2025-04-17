@@ -1,45 +1,40 @@
-name: Deploy HTML/CSS to GitHub Pages Repository
+name: Deploy HTML/CSS to GitHub Pages
 
 on:
   push:
-    branches: [master]  # Escucha cambios en la rama master
+    branches:
+      - master  # Desencadena cuando se hace push a la rama master
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest   # El job se ejecutará en Ubuntu
+    runs-on: ubuntu-latest
 
     steps:
-      # Paso 1: Clonar el repositorio
+      # Paso 1: Checkout del repositorio
       - name: Checkout del repo
         uses: actions/checkout@v3
 
-      # Paso 2: Configurar Git para el commit
-      - name: Configurar Git ci
+      # Paso 2: Configurar Git
+      - name: Configurar Git
         run: |
-          git config --global user.email "sebastian.jsmopu@gmail.com"
-          git config --global user.name "GitHub Action Sebastian"
+          git config --global user.email "action@github.com"
+          git config --global user.name "GitHub Actions"
 
-      # Paso 3: Clonar o crear la rama gh-pages
-      - name: Clonar la rama gh-pages
-        run: |
-          git clone --branch gh-pages https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }} gh-pages || mkdir gh-pages
+      # Paso 3: Crear carpeta gh-pages si no existe
+      - name: Crear carpeta temporal gh-pages
+        run: mkdir gh-pages
 
-      # Paso 4: Limpiar la rama gh-pages y copiar los archivos
-      - name: Copiar archivos generados a gh-pages
-        run: |
-          rm -rf gh-pages/*  # Elimina cualquier archivo previo en gh-pages
-          cp -r index.html styles.css gh-pages/  # Copia tus archivos HTML y CSS a la rama gh-pages
+      # Paso 4: Copiar archivos a la carpeta gh-pages
+      - name: Copiar archivos a gh-pages
+        run: cp index.html styles.css gh-pages/
 
-      # Paso 5: Hacer commit y push a gh-pages
-      - name: Hacer commit y push
+      # Paso 5: Inicializar repo en carpeta gh-pages y hacer push
+      - name: Deploy a GitHub Pages
         run: |
           cd gh-pages
+          git init
+          git checkout -b gh-pages
           git add .
           git commit -m "Deploy automático - ${{ github.sha }}"
-          git branch -M gh-pages
-
-          # Verificar si el remoto ya existe, y agregarlo solo si no existe
-          git remote get-url origin || git remote add origin https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}
-          
-          # Push a la rama gh-pages
-          git push -f origin gh-pages  # Pushea la rama gh-pages
+          git remote add origin https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}
+          git push -f origin gh-pages
