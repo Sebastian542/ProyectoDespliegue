@@ -1,38 +1,31 @@
-name: CI/CD Pipeline
+deploy:
+  needs: build-and-test
+  runs-on: ubuntu-latest
+  if: github.ref == 'refs/heads/main' && success()
 
-on:
-  push:
-    branches: [master]
-  pull_request:
-    branches: [master]
+  steps:
+    - name: Clonar el repositorio
+      uses: actions/checkout@v3
 
-jobs:
-  build-and-test:
-    runs-on: ubuntu-latest
+    - name: Usar Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
 
-    steps:
-      - name: Clonar el repositorio
-        uses: actions/checkout@v3
+    - name: Instalar dependencias
+      run: npm install
 
-      - name: Usar Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
+    - name: Build del proyecto
+      run: npm run build
 
-      - name: Instalar dependencias
-        run: npm install
-
-      - name: Ejecutar tests
-        run: npm test
-
-  deploy:
-    needs: build-and-test
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main' && success()
-
-    steps:
-      - name: Clonar el repositorio
-        uses: actions/checkout@v3
-
-      - name: Hacer "deploy"
-        run: echo "Aquí iría tu script de despliegue, como subir a Firebase, Vercel, etc."
+    - name: Deploy a gh-pages
+      run: |
+        git config --global user.email "action@github.com"
+        git config --global user.name "GitHub Action"
+        git clone --branch gh-pages https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }} gh-pages
+        rm -rf gh-pages/*
+        cp -r dist/* gh-pages/
+        cd gh-pages
+        git add .
+        git commit -m "Deploy desde CI - ${{ github.sha }}"
+        git push origin gh-pages
