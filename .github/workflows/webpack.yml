@@ -11,5 +11,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name:Echo the message
-      - run: |
+      - run: | 
           echo "Hola "
