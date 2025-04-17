@@ -1,15 +1,38 @@
-name: Webpack
+name: CI/CD Pipeline
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [master]
   pull_request:
-    branches: [ "master" ]
+    branches: [master]
 
 jobs:
-  build:
+  build-and-test:
     runs-on: ubuntu-latest
+
     steps:
-      - name:Echo the message
-      - run: | 
-          echo "Hola "
+      - name: Clonar el repositorio
+        uses: actions/checkout@v3
+
+      - name: Usar Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Instalar dependencias
+        run: npm install
+
+      - name: Ejecutar tests
+        run: npm test
+
+  deploy:
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && success()
+
+    steps:
+      - name: Clonar el repositorio
+        uses: actions/checkout@v3
+
+      - name: Hacer "deploy"
+        run: echo "Aquí iría tu script de despliegue, como subir a Firebase, Vercel, etc."
