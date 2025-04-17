@@ -36,7 +36,7 @@ jobs:
       - name: Verificar que el GH_TOKEN está presente
         run: |
           if [ -z "${{ secrets.GH_TOKEN }}" ]; then
-            echo "🚨 GH_TOKEN está vacío o mal definido"
+            echo "🚨 GH_TOKEN está  mal definido"
             exit 1
           else
             echo "✅ GH_TOKEN está correctamente !!"

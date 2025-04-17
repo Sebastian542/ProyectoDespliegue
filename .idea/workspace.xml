@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b02da47-9857-4f81-8344-c017fc0a97fd" name="Changes" comment="Solucion fallo yml credenciales">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/ci-cd.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/ci-cd.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="7b02da47-9857-4f81-8344-c017fc0a97fd" name="Changes" comment="Solucion fallo yml credenciales" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -80,7 +77,7 @@
       <option name="presentableId" value="Default" />
       <updated>1744858008549</updated>
       <workItem from="1744858010249" duration="4859000" />
-      <workItem from="1744863093300" duration="3400000" />
+      <workItem from="1744863093300" duration="3848000" />
     </task>
     <task id="LOCAL-00001" summary="Actualizacion yaml">
       <option name="closed" value="true" />
@@ -274,7 +271,31 @@
       <option name="project" value="LOCAL" />
       <updated>1744866422367</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Solucion fallo yml credenciales">
+      <option name="closed" value="true" />
+      <created>1744866535981</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1744866535981</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Solucion fallo yml credenciales">
+      <option name="closed" value="true" />
+      <created>1744866776809</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1744866776809</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Solucion fallo yml credenciales">
+      <option name="closed" value="true" />
+      <created>1744866966389</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1744866966389</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
