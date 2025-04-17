@@ -14,7 +14,7 @@ jobs:
         uses: actions/checkout@v3
 
       # Paso 2: Configurar Git para el commit
-      - name: Configurar Git ci
+      - name: Configurar Git
         run: |
           git config --global user.email "sebastian.jsmopu@gmail.com"
           git config --global user.name "GitHub Action Sebastian"
