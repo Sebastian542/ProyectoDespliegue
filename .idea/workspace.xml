@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7b02da47-9857-4f81-8344-c017fc0a97fd" name="Changes" comment="Solucion fallo css">
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Juan Sebastian Muñoz &lt;sebastian.jsmopu@gmail.com&gt;" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Sebastian542&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Sebastian542/ProyectoDespliegue&quot;,
+    &quot;accountId&quot;: &quot;6753cbfb-6b98-460b-8958-99d94a20e15b&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2vq1ttJZ5rR00WGAthrXsBtIPeR" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "gh-pages",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Juan Sebastian Muñoz/Desktop/ProyectoDespliegue",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Juan Sebastian Muñoz\Desktop\ProyectoDespliegue\.github\workflows" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26053.27" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26053.27" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7b02da47-9857-4f81-8344-c017fc0a97fd" name="Changes" comment="" />
+      <created>1744858008549</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1744858008549</updated>
+      <workItem from="1744858010249" duration="4859000" />
+      <workItem from="1744863093300" duration="930000" />
+    </task>
+    <task id="LOCAL-00001" summary="Actualizacion yaml">
+      <option name="closed" value="true" />
+      <created>1744859873627</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1744859873627</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Actualizacion yaml">
+      <option name="closed" value="true" />
+      <created>1744859983061</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1744859983061</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Actualizacion yaml">
+      <option name="closed" value="true" />
+      <created>1744860006867</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1744860006867</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Actualizacion yaml">
+      <option name="closed" value="true" />
+      <created>1744860530502</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1744860530502</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Actualizacion yaml">
+      <option name="closed" value="true" />
+      <created>1744861250825</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1744861250825</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Actualizacion yaml">
+      <option name="closed" value="true" />
+      <created>1744861813332</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1744861813332</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Activacion de yaml">
+      <option name="closed" value="true" />
+      <created>1744862361540</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1744862361540</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Cambio de branch por master">
+      <option name="closed" value="true" />
+      <created>1744862602654</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1744862602655</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Cambio init gh-pages">
+      <option name="closed" value="true" />
+      <created>1744862774360</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1744862774360</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Estructura Basica HTML">
+      <option name="closed" value="true" />
+      <created>1744863210190</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1744863210190</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Estructura Basica HTML">
+      <option name="closed" value="true" />
+      <created>1744863367119</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1744863367119</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Estructura Basica yaml">
+      <option name="closed" value="true" />
+      <created>1744863588186</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1744863588186</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Estructura Basica html">
+      <option name="closed" value="true" />
+      <created>1744863666810</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1744863666810</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Solucion fallo css">
+      <option name="closed" value="true" />
+      <created>1744863801883</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1744863801883</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Actualizacion yaml" />
+    <MESSAGE value="Activacion de yaml" />
+    <MESSAGE value="Cambio de branch por master" />
+    <MESSAGE value="Cambio init gh-pages" />
+    <MESSAGE value="Estructura Basica HTML" />
+    <MESSAGE value="Estructura Basica" />
+    <MESSAGE value="Estructura Basica yaml" />
+    <MESSAGE value="Estructura Basica html" />
+    <MESSAGE value="Solucion fallo css" />
+    <option name="LAST_COMMIT_MESSAGE" value="Solucion fallo css" />
+  </component>
+</project>
