@@ -1,4 +1,4 @@
-name: Deploy HTML/CSS to GitHub Pages
+name: Deploy HTML/CSS to GitHub Pages Repository
 
 on:
   push:
