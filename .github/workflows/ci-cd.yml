@@ -39,7 +39,7 @@ jobs:
             echo "🚨 GH_TOKEN está vacío o mal definido"
             exit 1
           else
-            echo "✅ GH_TOKEN está correctamente "
+            echo "✅ GH_TOKEN está correctamente !!"
           fi
 
       - name: Push a gh-pages
