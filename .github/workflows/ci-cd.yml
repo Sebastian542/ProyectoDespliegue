@@ -3,7 +3,7 @@ name: Deploy HTML/CSS to GitHub Pages
 on:
   push:
     branches:
-      - master  # Desencadena cuando se hace push a la rama master
+      - master # Desencadena cuando se hace push a la rama master
 
 jobs:
   deploy:
