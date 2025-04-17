@@ -37,6 +37,9 @@ jobs:
           git add .
           git commit -m "Deploy automático - ${{ github.sha }}"
           git branch -M gh-pages
-          git remote add origin https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}
-          git push -f origin gh-pages  # Pushea la rama gh-pages
 
+          # Verificar si el remoto ya existe, y agregarlo solo si no existe
+          git remote get-url origin || git remote add origin https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}
+          
+          # Push a la rama gh-pages
+          git push -f origin gh-pages  # Pushea la rama gh-pages
