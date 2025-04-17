@@ -9,3 +9,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    steps:
+      - name:Echo the message
+      - run: |
+          echo "Hola "
