@@ -16,8 +16,8 @@ jobs:
       # Paso 2: Configurar Git para el commit
       - name: Configurar Git
         run: |
-          git config --global user.email "action@github.com"
-          git config --global user.name "GitHub Action"
+          git config --global user.email "sebastian.jsmopu@gmail.com"
+          git config --global user.name "GitHub Action Sebastian"
 
       # Paso 3: Clonar o crear la rama gh-pages
       - name: Clonar la rama gh-pages
