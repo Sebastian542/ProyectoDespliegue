@@ -6,7 +6,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest  # El job se ejecutará en Ubuntu
+    runs-on: ubuntu-latest   # El job se ejecutará en Ubuntu
 
     steps:
       # Paso 1: Clonar el repositorio
