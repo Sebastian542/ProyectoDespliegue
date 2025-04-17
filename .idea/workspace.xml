@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b02da47-9857-4f81-8344-c017fc0a97fd" name="Changes" comment="Solucion fallo yml">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/ci-cd.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/ci-cd.yml" afterDir="false" />
-    </list>
+    <list default="true" id="7b02da47-9857-4f81-8344-c017fc0a97fd" name="Changes" comment="Solucion fallo yml credenciales" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -79,7 +77,7 @@
       <option name="presentableId" value="Default" />
       <updated>1744858008549</updated>
       <workItem from="1744858010249" duration="4859000" />
-      <workItem from="1744863093300" duration="1258000" />
+      <workItem from="1744863093300" duration="1832000" />
     </task>
     <task id="LOCAL-00001" summary="Actualizacion yaml">
       <option name="closed" value="true" />
@@ -209,7 +207,23 @@
       <option name="project" value="LOCAL" />
       <updated>1744864287519</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Solucion fallo yml credenciales">
+      <option name="closed" value="true" />
+      <created>1744864375105</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1744864375105</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Solucion fallo yml credenciales">
+      <option name="closed" value="true" />
+      <created>1744864596078</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1744864596078</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -237,6 +251,7 @@
     <MESSAGE value="Estructura Basica html" />
     <MESSAGE value="Solucion fallo css" />
     <MESSAGE value="Solucion fallo yml" />
-    <option name="LAST_COMMIT_MESSAGE" value="Solucion fallo yml" />
+    <MESSAGE value="Solucion fallo yml credenciales" />
+    <option name="LAST_COMMIT_MESSAGE" value="Solucion fallo yml credenciales" />
   </component>
 </project>
