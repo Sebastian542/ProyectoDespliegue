@@ -3,38 +3,47 @@ name: Deploy HTML/CSS to GitHub Pages
 on:
   push:
     branches:
-      - master # Desencadena cuando se hace push a la rama master
+      - master  # Cambios en master disparan el flujo
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # Paso 1: Checkout del repositorio
       - name: Checkout del repo
         uses: actions/checkout@v3
 
-      # Paso 2: Configurar Git
       - name: Configurar Git
         run: |
           git config --global user.email "action@github.com"
           git config --global user.name "GitHub Actions"
 
-      # Paso 3: Crear carpeta gh-pages si no existe
       - name: Crear carpeta temporal gh-pages
         run: mkdir gh-pages
 
-      # Paso 4: Copiar archivos a la carpeta gh-pages
       - name: Copiar archivos a gh-pages
         run: cp index.html styles.css gh-pages/
 
-      # Paso 5: Inicializar repo en carpeta gh-pages y hacer push
-      - name: Deploy a GitHub Pages
+      - name: Inicializar Git y preparar rama gh-pages
         run: |
           cd gh-pages
           git init
           git checkout -b gh-pages
           git add .
           git commit -m "Deploy automático - ${{ github.sha }}"
+
+      # 👇 Verifica que el token esté presente
+      - name: Verificar que el GH_TOKEN está presente
+        run: |
+          if [ -z "${{ secrets.GH_TOKEN }}" ]; then
+            echo "🚨 GH_TOKEN está vacío o mal definido"
+            exit 1
+          else
+            echo "✅ GH_TOKEN está correctamente definido"
+          fi
+
+      - name: Push a gh-pages
+        run: |
+          cd gh-pages
           git remote add origin https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}
           git push -f origin gh-pages

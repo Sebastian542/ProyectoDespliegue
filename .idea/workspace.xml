@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7b02da47-9857-4f81-8344-c017fc0a97fd" name="Changes" comment="Solucion fallo yml credenciales">
       <change beforePath="$PROJECT_DIR$/.github/workflows/ci-cd.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/ci-cd.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +80,7 @@
       <option name="presentableId" value="Default" />
       <updated>1744858008549</updated>
       <workItem from="1744858010249" duration="4859000" />
-      <workItem from="1744863093300" duration="2697000" />
+      <workItem from="1744863093300" duration="3400000" />
     </task>
     <task id="LOCAL-00001" summary="Actualizacion yaml">
       <option name="closed" value="true" />
@@ -249,7 +250,31 @@
       <option name="project" value="LOCAL" />
       <updated>1744865561909</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Solucion fallo yml credenciales">
+      <option name="closed" value="true" />
+      <created>1744865828259</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1744865828259</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Solucion fallo yml credenciales">
+      <option name="closed" value="true" />
+      <created>1744866261412</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1744866261412</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Solucion fallo yml credenciales">
+      <option name="closed" value="true" />
+      <created>1744866422367</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1744866422367</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
