@@ -23,10 +23,10 @@ jobs:
           echo "✅ SONAR_PROJECT_KEY está definido"
         fi
 
-        if [ -z "${{ secrets.SONAR_ORG }}" ]; then
-          echo "🚨 SONAR_ORG no está definido"
+        if [ -z "${{ secrets.SONAR_ORGANIZATION }}" ]; then
+          echo "🚨 SONAR_ORGANIZATION no está definido"
         else
-          echo "✅ SONAR_ORG está definido"
+          echo "✅ SONAR_ORGANIZATION está definido"
         fi
 
         # Importante: No imprimas SONAR_TOKEN o GITHUB_TOKEN por seguridad
@@ -36,8 +36,8 @@ jobs:
     - name: SonarCloud Scan
       uses: sonarsource/sonarcloud-github-action@v2.3
       with:
-        sonar-project-key: ${{ secrets.SONAR_PROJECT_KEY }}  # Usando el nombre correcto para el secreto
-        sonar-organization: ${{ secrets.SONAR_ORG }}  # Usando el nombre correcto para el secreto
+        SONAR_PROJECT_KEY: ${{ secrets.SONAR_PROJECT_KEY }}  # Usando el nombre correcto para el secreto
+        SONAR_ORGANIZATION: ${{ secrets.SONAR_ORGANIZATION }}  # Usando el nombre correcto para el secreto
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Token de acceso de GitHub
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}  # Token de acceso de SonarCloud
