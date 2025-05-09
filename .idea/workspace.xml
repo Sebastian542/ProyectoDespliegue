@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b02da47-9857-4f81-8344-c017fc0a97fd" name="Changes" comment="Solucion fallo yml credenciales">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="7b02da47-9857-4f81-8344-c017fc0a97fd" name="Changes" comment="funciona" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -54,10 +52,10 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "prueba",
+    "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Juan Sebastian Muñoz/Desktop/ProyectoDespliegue",
+    "last_opened_file_path": "C:/Users/juand/OneDrive/Escritorio/ProyectoDespliegue",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -347,7 +345,31 @@
       <option name="project" value="LOCAL" />
       <updated>1745596952803</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="funciona">
+      <option name="closed" value="true" />
+      <created>1746819452280</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1746819452280</updated>
+    </task>
+    <task id="LOCAL-00034" summary="funciona">
+      <option name="closed" value="true" />
+      <created>1746819664781</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1746819664781</updated>
+    </task>
+    <task id="LOCAL-00035" summary="funciona">
+      <option name="closed" value="true" />
+      <created>1746819695395</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1746819695395</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -376,6 +398,7 @@
     <MESSAGE value="Solucion fallo css" />
     <MESSAGE value="Solucion fallo yml" />
     <MESSAGE value="Solucion fallo yml credenciales" />
-    <option name="LAST_COMMIT_MESSAGE" value="Solucion fallo yml credenciales" />
+    <MESSAGE value="funciona" />
+    <option name="LAST_COMMIT_MESSAGE" value="funciona" />
   </component>
 </project>
