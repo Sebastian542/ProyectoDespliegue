@@ -32,7 +32,8 @@ jobs:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         SONAR_HOST_URL: https://sonarcloud.io  # Corregido para SonarCloud
         SONAR_PROJECT_KEY: Sebastian542_ProyectoDespliegue # Usando tu valor proporcionado
-        SONAR_ORGANIZATION: Sebastian542      # Añadido SONAR_ORGANIZATION
+        SONAR_ORGANIZATION: Juan Sebastian Muñoz Peñuela # Añadido SONAR_ORGANIZATION
+
 
   deploy:
     needs: build_and_analyze # Espera a que el análisis de SonarCloud termine
