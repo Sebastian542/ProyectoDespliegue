@@ -3,7 +3,7 @@ name: CI/CD con SonarCloud y Deploy a GitHub Pages
 on:
   push:
     branches:
-      - master  # Cambios en master disparan el flujo
+      - master  # Cambios en master disparan el flujo 
 
 jobs:
   build_and_analyze:
