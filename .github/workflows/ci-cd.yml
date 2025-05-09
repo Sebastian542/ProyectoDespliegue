@@ -25,6 +25,25 @@ jobs:
     # - name: Install Dependencies
     #   run: npm install
 
+    # Verificar parámetros de SonarCloud
+    - name: Verificar parámetros de SonarCloud
+      run: |
+        echo "SONAR_PROJECT_KEY: ${{ secrets.SONAR_PROJECT_KEY }}"
+        echo "SONAR_ORG: ${{ secrets.SONAR_ORG }}"
+        if [ -z "${{ secrets.SONAR_PROJECT_KEY }}" ]; then
+          echo "🚨 SONAR_PROJECT_KEY no está configurado correctamente"
+          exit 1
+        else
+          echo "✅ SONAR_PROJECT_KEY está configurado correctamente"
+        fi
+        if [ -z "${{ secrets.SONAR_ORG }}" ]; then
+          echo "🚨 SONAR_ORG no está configurado correctamente"
+          exit 1
+        else
+          echo "✅ SONAR_ORG está configurado correctamente"
+        fi
+
+    # SonarCloud Scan
     - name: SonarCloud Scan
       uses: sonarsource/sonarcloud-github-action@v2.1
       env:
@@ -33,7 +52,6 @@ jobs:
         SONAR_HOST_URL: https://sonarcloud.io  # Corregido para SonarCloud
         SONAR_PROJECT_KEY: Sebastian542_ProyectoDespliegue # Usando tu valor proporcionado
         SONAR_ORGANIZATION: Juan Sebastian Muñoz Peñuela # Añadido SONAR_ORGANIZATION
-
 
   deploy:
     needs: build_and_analyze # Espera a que el análisis de SonarCloud termine
@@ -62,7 +80,7 @@ jobs:
           git add .
           git commit -m "Deploy automático - ${{ github.sha }}"
 
-      # 👇 Verifica que el token esté presente
+      # 👇 Verifica que el GH_TOKEN está presente
       - name: Verificar que el GH_TOKEN está presente
         run: |
           if [ -z "${{ secrets.GH_TOKEN }}" ]; then
