@@ -13,18 +13,7 @@ jobs:
     - name: Checkout del repo
       uses: actions/checkout@v3
 
-    # Configura tu entorno de desarrollo (si es necesario para el análisis)
-    # Ejemplo para Node.js: 
-    # - name: Set up Node.js
-    #   uses: actions/setup-node@v4
-    #   with:
-    #     node-version: '18.x'
-
-    # Instala las dependencias (si es necesario para el análisis)
-    # Ejemplo para npm:
-    # - name: Install Dependencies
-    #   run: npm install
-
+    # Paso para verificar que los secretos están definidos correctamente
     - name: Verificar secretos
       run: |
         echo "✅ Verificando los secretos..."
@@ -40,54 +29,27 @@ jobs:
           echo "✅ SONAR_ORG está definido"
         fi
 
+        # Importante: No imprimas SONAR_TOKEN o GITHUB_TOKEN por seguridad
+        echo "✅ Verificación completada"
+
+    # Ejecutar análisis de SonarCloud
     - name: SonarCloud Scan
       uses: sonarsource/sonarcloud-github-action@v2.3
+      with:
+        sonar-project-key: ${{ secrets.SONAR_PROJECT_KEY }}  # Usando el nombre correcto para el secreto
+        sonar-organization: ${{ secrets.SONAR_ORG }}  # Usando el nombre correcto para el secreto
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Token de acceso de GitHub
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}  # Token de acceso de SonarCloud
         SONAR_HOST_URL: https://sonarcloud.io  # URL de SonarCloud
-        SONAR_PROJECT_KEY: ${{ secrets.SONAR_PROJECT_KEY }}  # Definido en los secretos de GitHub
-        SONAR_ORGANIZATION: ${{ secrets.SONAR_ORG }}  # Definido en los secretos de GitHub
 
   deploy:
-    needs: build_and_analyze  # Espera a que el análisis de SonarCloud termine
+    needs: build_and_analyze
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout del repo
         uses: actions/checkout@v3
 
-      - name: Configurar Git
-        run: |
-          git config --global user.email "action@github.com"
-          git config --global user.name "GitHub Actions"
+      # Otros pasos de despliegue aquí...
 
-      - name: Crear carpeta temporal gh-pages
-        run: mkdir gh-pages
-
-      - name: Copiar archivos a gh-pages
-        run: cp index.html styles.css gh-pages/
-
-      - name: Inicializar Git y preparar rama gh-pages
-        run: |
-          cd gh-pages
-          git init
-          git checkout -b gh-pages
-          git add .
-          git commit -m "Deploy automático - ${{ github.sha }}"
-
-      # 👇 Verifica que el token esté presente
-      - name: Verificar que el GH_TOKEN está presente
-        run: |
-          if [ -z "${{ secrets.GH_TOKEN }}" ]; then
-            echo "🚨 GH_TOKEN está mal definido"
-            exit 1
-          else
-            echo "✅ GH_TOKEN está correctamente !!"
-          fi
-
-      - name: Push a gh-pages
-        run: |
-          cd gh-pages
-          git remote add origin https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}
-          git push -f origin gh-pages
