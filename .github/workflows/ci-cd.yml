@@ -3,7 +3,7 @@ name: CI/CD con SonarCloud y Deploy a GitHub Pages
 on:
   push:
     branches:
-      - master  # Cambios en master disparan el flujo 
+      - master  # Cambios en master disparan el flujo
 
 jobs:
   build_and_analyze:
@@ -12,34 +12,40 @@ jobs:
     steps:
     - name: Checkout del repo
       uses: actions/checkout@v3
+      with:
+        fetch-depth: 0 # Necesario para SonarCloud
 
-    # Verificar parámetros de SonarCloud
+    # Verificar parámetros de SonarCloud (OPCIONAL, pero útil para depuración)
     - name: Verificar parámetros de SonarCloud
       run: |
         echo "SONAR_PROJECT_KEY: ${{ secrets.SONAR_PROJECT_KEY }}"
-        echo "SONAR_ORG: ${{ secrets.SONAR_ORG }}"
+        echo "SONAR_ORGANIZATION: ${{ secrets.SONAR_ORGANIZATION }}"
         if [ -z "${{ secrets.SONAR_PROJECT_KEY }}" ]; then
           echo "🚨 SONAR_PROJECT_KEY no está configurado correctamente"
           exit 1
         else
           echo "✅ SONAR_PROJECT_KEY está configurado correctamente"
         fi
-        if [ -z "${{ secrets.SONAR_ORG }}" ]; then
-          echo "🚨 SONAR_ORG no está configurado correctamente"
+        if [ -z "${{ secrets.SONAR_ORGANIZATION }}" ]; then
+          echo "🚨 SONAR_ORGANIZATION no está configurado correctamente"
           exit 1
         else
-          echo "✅ SONAR_ORG está configurado correctamente"
+          echo "✅ SONAR_ORGANIZATION está configurado correctamente"
         fi
 
     # SonarCloud Scan
     - name: SonarCloud Scan
-      uses: sonarsource/sonarcloud-github-action@v2.1
+      uses: sonarsource/sonarcloud-github-action@v2.3 # Usando la versión más reciente
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        SONAR_HOST_URL: https://sonarcloud.io  # Corregido para SonarCloud
-        SONAR_PROJECT_KEY: ${{ secrets.SONAR_PROJECT_KEY }}  # Usando el secreto correctamente
-        SONAR_ORGANIZATION: ${{ secrets.SONAR_ORGANIZATION }}         # Usando el secreto correctamente
+      with:
+        #  args: > # No es necesario usar 'args' de esta manera para las propiedades principales
+        #    -Dsonar.projectKey=${{ secrets.SONAR_PROJECT_KEY }}
+        #    -Dsonar.organization=${{ secrets.SONAR_ORGANIZATION }}
+        projectKey: ${{ secrets.SONAR_PROJECT_KEY }}  # Usando la forma recomendada
+        organization: ${{ secrets.SONAR_ORGANIZATION }} # Usando la forma recomendada
+
 
   deploy:
     needs: build_and_analyze  # Espera a que el análisis de SonarCloud termine
