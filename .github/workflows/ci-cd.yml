@@ -3,7 +3,7 @@ name: CI/CD con SonarCloud y Deploy a GitHub Pages
 on:
   push:
     branches:
-      - master  # Cambios en master disparan el flujo  
+      - master  # Cambios en master disparan el flujo
 
 jobs:
   build_and_analyze:
@@ -12,37 +12,42 @@ jobs:
     steps:
     - name: Checkout del repo
       uses: actions/checkout@v3
-      with:
-        fetch-depth: 0 # Necesario para SonarCloud
 
-    # Verificar parámetros de SonarCloud (OPCIONAL, pero útil para depuración)
-    - name: Verificar parámetros de SonarCloud
+    # Configura tu entorno de desarrollo (si es necesario para el análisis)
+    # Ejemplo para Node.js: 
+    # - name: Set up Node.js
+    #   uses: actions/setup-node@v4
+    #   with:
+    #     node-version: '18.x'
+
+    # Instala las dependencias (si es necesario para el análisis)
+    # Ejemplo para npm:
+    # - name: Install Dependencies
+    #   run: npm install
+
+    - name: Verificar secretos
       run: |
-        echo "SONAR_PROJECT_KEY: ${{ secrets.SONAR_PROJECT_KEY }}"
-        echo "SONAR_ORGANIZATION: ${{ secrets.SONAR_ORGANIZATION }}"
+        echo "✅ Verificando los secretos..."
         if [ -z "${{ secrets.SONAR_PROJECT_KEY }}" ]; then
-          echo "🚨 SONAR_PROJECT_KEY no está configurado correctamente"
-          exit 1
+          echo "🚨 SONAR_PROJECT_KEY no está definido"
         else
-          echo "✅ SONAR_PROJECT_KEY está configurado correctamente"
-        fi
-        if [ -z "${{ secrets.SONAR_ORGANIZATION }}" ]; then
-          echo "🚨 SONAR_ORGANIZATION no está configurado correctamente"
-          exit 1
-        else
-          echo "✅ SONAR_ORGANIZATION está configurado correctamente"
+          echo "✅ SONAR_PROJECT_KEY está definido"
         fi
 
-    # SonarCloud Scan
+        if [ -z "${{ secrets.SONAR_ORG }}" ]; then
+          echo "🚨 SONAR_ORG no está definido"
+        else
+          echo "✅ SONAR_ORG está definido"
+        fi
+
     - name: SonarCloud Scan
-      uses: sonarsource/sonarcloud-github-action@v2.3 # Usando la versión más reciente
+      uses: sonarsource/sonarcloud-github-action@v2.3
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      with:
-        SONAR_PROJECT_KEY: ${{ secrets.SONAR_PROJECT_KEY }}  # Usando la forma recomendada
-        SONAR_ORGANIZATION: ${{ secrets.SONAR_ORGANIZATION }} # Usando la forma recomendada
-
+        SONAR_HOST_URL: https://sonarcloud.io  # URL de SonarCloud
+        SONAR_PROJECT_KEY: ${{ secrets.SONAR_PROJECT_KEY }}  # Definido en los secretos de GitHub
+        SONAR_ORGANIZATION: ${{ secrets.SONAR_ORG }}  # Definido en los secretos de GitHub
 
   deploy:
     needs: build_and_analyze  # Espera a que el análisis de SonarCloud termine
@@ -71,7 +76,7 @@ jobs:
           git add .
           git commit -m "Deploy automático - ${{ github.sha }}"
 
-      # 👇 Verifica que el GH_TOKEN está presente
+      # 👇 Verifica que el token esté presente
       - name: Verificar que el GH_TOKEN está presente
         run: |
           if [ -z "${{ secrets.GH_TOKEN }}" ]; then
