@@ -13,18 +13,6 @@ jobs:
     - name: Checkout del repo
       uses: actions/checkout@v3
 
-    # Configura tu entorno de desarrollo (si es necesario para el análisis)
-    # Ejemplo para Node.js:
-    # - name: Set up Node.js
-    #   uses: actions/setup-node@v4
-    #   with:
-    #     node-version: '18.x'
-
-    # Instala las dependencias (si es necesario para el análisis)
-    # Ejemplo para npm:
-    # - name: Install Dependencies
-    #   run: npm install
-
     # Verificar parámetros de SonarCloud
     - name: Verificar parámetros de SonarCloud
       run: |
@@ -50,11 +38,11 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         SONAR_HOST_URL: https://sonarcloud.io  # Corregido para SonarCloud
-        SONAR_PROJECT_KEY: Sebastian542_ProyectoDespliegue # Usando tu valor proporcionado
-        SONAR_ORGANIZATION: Juan Sebastian Muñoz Peñuela # Añadido SONAR_ORGANIZATION
+        SONAR_PROJECT_KEY: ${{ secrets.SONAR_PROJECT_KEY }}  # Usando el secreto correctamente
+        SONAR_ORGANIZATION: ${{ secrets.SONAR_ORG }}         # Usando el secreto correctamente
 
   deploy:
-    needs: build_and_analyze # Espera a que el análisis de SonarCloud termine
+    needs: build_and_analyze  # Espera a que el análisis de SonarCloud termine
     runs-on: ubuntu-latest
 
     steps:
