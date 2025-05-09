@@ -39,7 +39,7 @@ jobs:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         SONAR_HOST_URL: https://sonarcloud.io  # Corregido para SonarCloud
         SONAR_PROJECT_KEY: ${{ secrets.SONAR_PROJECT_KEY }}  # Usando el secreto correctamente
-        SONAR_ORGANIZATION: ${{ secrets.SONAR_ORG }}         # Usando el secreto correctamente
+        SONAR_ORGANIZATION: ${{ secrets.SONAR_ORGANIZATION }}         # Usando el secreto correctamente
 
   deploy:
     needs: build_and_analyze  # Espera a que el análisis de SonarCloud termine
