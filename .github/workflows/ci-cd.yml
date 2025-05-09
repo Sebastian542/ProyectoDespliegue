@@ -61,7 +61,7 @@ jobs:
         run: mkdir gh-pages
 
       - name: Copiar archivos a gh-pages
-        run: cp index.html css/styles.css gh-pages/
+        run: cp index.html styles.css gh-pages/
 
       - name: Inicializar Git y preparar rama gh-pages
         run: |
